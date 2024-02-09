@@ -48,8 +48,13 @@ def loginParfums():
         login_user(user)
 
         flash("Vous etes connecté")
+         
+        if user.id == 8:
+            return redirect(url_for('admin'))  # Redirect to admin page
+        else:
+            return redirect(url_for('Acceuil'))
 
-        return redirect(url_for('Acceuil'))
+        
 
     return render_template('signIn.html',form = login_form)
 
