@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../static/images/icones/icons8-flacon-de-parfum-féminin-96.ico">
+    <title>Noble-Aromas</title>
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="{{url_for('static',filename='css/acceuil.css')}}"
+
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=Lobster+Two&family=Nanum+Pen+Script&family=Oswald:wght@300&display=swap" rel="stylesheet">
+  <style>
+    .dropdown a{
+        color: white;
+    }
+    .nom_user_modify{
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+    
+    <header>
+        <div class="Logo">
+        </div>
+        <div class="nav-bar">
+
+            <ul class="navbar">
+                <li><a href="/">Accueil</a></li>
+                <li>
+                    <a href="#">Nos parfums</a>
+                    <ul class="dropdown">
+                        <li> <a href="{{url_for('ParfumsHomme')}}">parfums Homme</a></li>
+                    
+                        <li> <a href="{{url_for('ParfumsFemme')}}">parfums Femme</a></li>
+                        <li> <a href="{{url_for('ParfumsMixte')}}">parfums Mixte</a></li>
+                    </ul>
+                </li>
+                <li> <a href="{{url_for('about')}}">A propos</a></li>
+                <li> <a href="{{url_for('contactUs')}}">Contactez nous</a></li>
+            
+              </ul>
+        </div>
+        <div class="Login">
+            {% if current_user.is_authenticated %}
+                <a class="panier" href="{{ url_for('panier') }}"> 
+                    
+                     <article class="panier-new"> {{nombre}} </article>
+
+                     <button class="btn-panier"></button></a>
+                <button class="btn-login"> <p class="nom_user_modify">  Bonjour {{ current_user.nom }} </p></button>
+                <a href="{{ url_for('logout') }}"><button class="btn-logout"></button></a>
+            {% else %}
+                <button class="btn-login"><a href="signIn"><p>Parfumez-vous</p></a></button>
+            {% endif %}
+        </div>
+    </header>
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-danger">{{ message }}</div>
+{% endfor %}
+
+        
+        {% block main %} 
+        {% endblock %}
+            <footer>
+                <div class="footer">
+                    <section  class="">
+                        <ul>
+                        <li><h2>Support</h2></li>
+                        <li>Parfumerie en Ville</li>
+                        <li>Hugo-Boss Parfums</li>
+                        <li>chez - yawa parfums</li>
+                        <li>MOmo - parfumerie</li>
+                        </ul>
+                        </section>
+                        <section  class="">
+                            <ul>
+                            <li><h2>Produits</h2></li>
+                            <li>parfums pour homme</li>
+                            <li>parfums pour femme</li>
+                            <li>parfums pour femme & homme</li>
+                            <li>parfums de Luxe</li>
+                            </ul>
+                            </section>
+                    <div class="grand-logo_social">
+                        <article class="logo"></article>
+                        <article class="social">
+                            <button class="btn-social-1"></button>
+                            <button class="btn-social-2"></button>
+                            <button class="btn-social-3"></button>
+                            <button class="btn-social-4"></button>
+                        </article>
+                    </div>
+                    <section  class="">
+                        <ul>
+                        <li><h2>User LInks</h2></li>
+                        <li>Your Account</li>
+                        <li>Your Shop</li>
+                        <li>Your Carr</li>
+                        <li>    Help</li>
+                        </ul>
+                        </section>
+                        <section  class="">
+                            <ul class="contact-images">
+                            <li><h2>Contact</h2></li>
+                            <li> <img src="../static/images/icones/map-pinned.svg" alt="">Colomb de la paix</li>
+                            <li><img src="../static/images/icones/mail.svg" alt=""> Shop@gmail.com</li>
+                            <li> <img src="../static/images/icones/phone.svg" alt="">+228 45 21 63 95</li>
+                            <li> <img src="../static/images/icones/phone.svg" alt="">+221 025 25 023</li>
+                            </ul>
+                            </section>
+                </div>
+                
+                <div class="copyright"><h6>Copyright 2023 - pullo All rights reserved </h6></div>
+            </footer>
+       
+            <script>
+              
+    document.addEventListener('DOMContentLoaded', (event) => {
+        let navItems = document.querySelectorAll('.nav-bar a');
+        navItems.forEach((navItem) => {
+            if (window.location.href.endsWith(navItem.getAttribute('href'))) {
+                navItem.classList.add('active');
+            }
+        });
+    });
+
+            </script>
+  
+    
+</body>
+</html>

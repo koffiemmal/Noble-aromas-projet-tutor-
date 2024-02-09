@@ -1,0 +1,22 @@
+<form action=""  method="post">
+    <table>
+    {{form.hidden_tag()}}
+    <tr>
+        <td>
+            {{form.nom.label}} <br>
+            {{form.nom}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{form.description.label}} <br>
+            {{form.description}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            {{form.submit}}
+        </td>
+    </tr>
+</table>
+</form>

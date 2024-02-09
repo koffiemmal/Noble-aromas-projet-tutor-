@@ -1,0 +1,693 @@
+body{
+    margin: 0;
+    padding: 0;
+   
+}
+
+header{
+   
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around ;
+    width: 100%;
+    background:rgba(255, 255, 255, 0.29);
+    color: black;
+    z-index: 8;
+    position: fixed;
+    backdrop-filter: blur(50px);
+    
+}
+a{
+    color: rgb(0, 0, 0);
+}
+.btn-panier{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-image: url(../images/shopping-cart.svg);
+    background-position: center;
+    background-size: 30px;
+    border: none;
+    background-color: rgba(148, 0, 0, 0);
+    background-repeat: no-repeat;
+    backdrop-filter: blur(100px);
+ position: relative;
+ z-index: 1;
+}
+
+.Logo{
+    background-image: url(../images/Capture_d_écran_du_2024-01-26_14-31-09-removebg-preview.png);
+    background-position: center;
+    background-size: 260px;
+    width: 250px;
+    height: 250px;
+    margin-top: 50px;
+    
+    border-bottom: none;
+    
+    border-radius: 100px;
+    z-index: 1;
+    border-bottom-left-radius: none;
+    border-bottom-right-radius: none;
+}
+
+.nav-bar{
+
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content:start ;
+    gap: 15px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 10vh;
+    font-weight: 100;
+
+    width: 90%;
+}
+.nav-bar ul{
+    list-style-type: none;
+    display:flex ;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+   
+    
+}
+.dropdown{
+    background-color: #6d7e8d;
+border-radius: 5px;
+    padding: 3px;
+    color: white;
+
+   
+    
+    
+    
+   
+    
+}
+.dropdown li{
+    border-bottom: 1px solid white;
+    color: white;
+    
+}
+
+.navbar li .dropdown {
+    display: none;
+    color: white;
+  }
+  
+  .navbar li:hover .dropdown {
+    display: block;
+    color: white;
+  }
+.nav-bar .dropdown{
+
+    display: none;
+    position: absolute;
+}
+.nav-bar .menu-deroulant {
+    position: relative;
+}
+.nav-bar .menu-deroulant :hover .dropdown{
+
+    display: block;
+}
+.nav-bar a {
+    text-decoration: none;
+    color:  rgb(0, 0, 0);
+    font-weight: bolder;
+}
+.nav-bar a:hover{
+    color: #6D6875;
+   
+    border-bottom: 2px solid white;
+}
+.nav-bar a.active {
+   
+    color: #6D6875;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+.dropdown :active{
+    color: #6D6875;
+    border-bottom: 2px solid rgb(0, 0, 0);
+
+}
+.navbar .navfirst{
+    background-color: red;
+    position: fixed;
+ /*    position: fixed;
+    position: relative; */
+
+}
+
+.panier{
+    position: relative;
+    bottom: 10px;
+    right: 5px;
+    z-index: 4;
+    
+}
+.btn-login{
+    width: 180px auto;
+    height: 36px;
+    border-radius: 25px;
+    background-color: #0f172a;
+    border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    color: #ffffff;
+    font-size: 5px;
+}
+
+.btn-login a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    
+ 
+   
+}
+.btn-logout{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-image: url(../images/log-out.svg);
+    background-position: center;
+    background-size: 30px;
+    background-color: rgba(148, 0, 0, 0);
+    background-repeat: no-repeat;
+    backdrop-filter: blur(100px);
+    border: none;
+    position: relative;
+    left: 5px;
+}
+
+.btn-login:hover{
+    box-shadow: 0px 0px 3px 3px white;
+}
+ .main{
+    height: 95vh;
+    width: 100%;
+
+    background-position: center;
+    background-size: cover; 
+} 
+.main{
+
+    height: 100vh;
+}
+.reste-main{
+    height: auto;
+ 
+
+   
+}
+.debut{
+   
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    bottom: 25px;
+
+}
+
+.debut-page1{
+
+    height: 35vh;
+    width: 46%;
+    display: flex;
+    background-color: #f4efe8;
+   
+    box-shadow:6px 10px 20px #75707eb1;
+}
+.debut-page1 p  a{
+    text-decoration: underline;
+    font-size: 15px;
+    color: #431407;
+    position: relative;
+    bottom: 76px;
+    left:15px;
+   
+}
+.debut-page1 h2{
+    font-weight: 200;
+    color: #9A3412;
+    position: relative;
+    left: 15px;
+}
+.debut-page2{
+    background-color: #efcdba;
+    height: 35vh;
+    width: 46%;
+    display: flex;
+    box-shadow:6px 10px 20px #75707eb1;
+
+}
+.Login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+margin-right: 10px;
+
+width: 20%;
+}
+.titre{
+height: 60%;
+
+width:80%;
+font-size: 28px;
+  font-weight: 400;
+  position:relative;
+}
+
+.photo1{
+    height: 100%;
+    width: 80%;
+    background-image: url(../images/rmbcg/Capture_d_écran_du_2024-01-27_19-02-44-removebg-preview.png);
+    position: relative;
+    
+    top: 7px;
+}
+
+.debut-page2 p a{
+    text-decoration: underline;
+    font-size: 15px;
+    color: #431407;
+    position: relative;
+    bottom: 76px;
+    left:15px;
+
+}
+
+.debut-page2 h2{
+    font-weight: 200;
+   color: #431407;
+    position: relative;
+    left: 15px;
+
+}
+
+.debut-page2 .photo2{
+    height: 100%;
+    width: 70%;
+    left: 3vh;
+    background-image: url(../images/Luxury_perfume_bottle_-1-removebg-preview.png);
+    position: relative;
+    
+}
+.A-propos{
+    
+    height: 40vh;
+    display: grid;
+    width: 70%;
+    grid-template-columns: 1.1fr 1.2fr 1.1fr;
+    grid-template-rows: auto;
+    margin-left: 30vh;
+    gap: 40px;
+
+    
+}
+.propos1{
+    border: 1px double #6d6875;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow:0px 0px 15px rgb(163, 162, 162)
+}
+.Icones{
+
+height: 100px;
+width: 100px;
+position: relative;
+bottom: 10px;
+background-image: url(../images/perfume_12096059.png);
+background-position: center;
+background-size: cover;
+}
+.Description{
+
+height: 50%;
+width: 80%;
+text-align: center;
+
+}
+
+.Description p {
+    font-size: 16px;
+}
+.propos2{
+    border: 1px double #6d6875;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow:0px 0px 15px rgb(163, 162, 162)
+}
+.Icones2{
+
+    height: 100px;
+    width: 100px;
+    position: relative;
+    bottom: 10px;
+    background-image: url(../images/meat_3664710.png);
+    background-position: center;
+    background-size: cover;
+    }
+
+.propos3{
+    border: 1px double #6d6875;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+box-shadow:0px 0px 15px rgb(163, 162, 162)
+}
+
+.Icones3{
+
+    height: 100px;
+    width: 100px;
+    position: relative;
+    bottom: 10px;
+    background-image: url(../images/oil_9208991.png);
+    background-position: center;
+    background-size: cover;
+    }
+
+    .Visuelle{
+     
+        height: 1050px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20vh;
+    }
+    .visuel1{
+        height: 910px;
+      
+        width: 618px;
+        background-image: url(../images/rmbcg/flacon-parfum-vide-details-dores.jpg);
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0px 10px 20px #00000053 ;
+    }
+    .visuel2{
+        width: 298px;
+        height: 265px;
+      
+        position: relative;
+       top: 250px;
+       right: 20px;
+       background-image: url(../images/rmbcg/Capture_d_écran_du_2024-01-28_02-18-25-removebg-preview.png);
+       background-position: center;
+       background-size: cover;
+       background-color: #E5989B;
+       box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.394);
+    }
+    .visuel3{
+        width: 517px;
+        height: 507px;
+        background-color: pink;
+        position: relative;
+        bottom: 75px;
+        right: 15vh;
+        background-image: url(../images/rmbcg/1134\ \(1\).webp);
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0px 10px 20px #00000082;
+    }
+    
+.Titre-parfums-populaires{
+    text-align: center;
+    font-size: 36px;
+    font-family: 'glamourbold';
+    font-weight: 200;
+
+}
+.popular-parfums{
+
+
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: auto;
+width: 60%;
+margin-left: 17vh;
+gap: 20px;
+
+height: 650px;
+}
+
+.popular-parfums article{
+    height: 500px;
+    width: 470px;
+
+
+
+}  
+@font-face {
+    font-family: 'glamourbold'; /* Nommez la police comme vous voulez */
+    src: url('../fonts/Glamor-BoldCondensedItalic.otf'); /* Remplacez par le chemin vers votre fichier de police */
+  }
+i {
+    font-family: 'glamourbold';
+}
+
+.parfums1{
+background-position: center;
+border-radius: 50px;
+box-shadow: inset 0px 0px 150px rgba(0, 0, 0, 0.496) ;
+
+
+background-color: #c6bed2;
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+}
+.parfums1 img{
+
+height: 300px;
+}
+.parfums1:hover{
+    transition: all 2s ease-in-out;
+    box-shadow:0px 10px 25px rgba(0, 0, 0, 0.321) ;
+    
+}
+
+.Price{
+    font-weight: bold;
+   text-align: center;
+
+}
+.Tendance h3{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'glamourbold';
+    
+}
+.Container{
+    height: 80vh;
+
+    display: flex;
+    align-items: center;
+ gap: 15px;
+ justify-content: center;
+    
+}
+.the-best{
+    box-shadow: inset 0px 0px 45px rgba(128, 128, 128, 0.607);
+    width: 36%;
+ 
+    height: 90%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   
+}
+.the-best-similar{
+    width: 26%;
+
+    height: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+
+}
+.the-best-similar article{
+
+    width: 250px;
+    height: 320px;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.347);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.the-best-similar img{
+    height: 220px;
+    width: 300px ;
+
+}
+.art-1{
+
+border: 0.5px solid rgba(130, 130, 130, 0.393);
+}
+
+
+footer{
+border-top: #000000;
+    height: 55vh;
+    background-color: #0f172a;
+}
+.footer{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 1fr 0.5fr 0.5fr;
+    grid-template-rows: auto;
+    
+}
+
+.footer section{
+    padding-top: 30px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    
+    
+}
+.footer section ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+ 
+
+}
+.footer section h2{
+    color: #ffffff;
+}
+.panier-new{
+  position: relative;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  text-align: center;
+  left: 25px;
+  top: 10px;
+
+    background-color: red;
+}
+.footer section li:hover{
+
+    color: rgb(255, 255, 255);
+
+    cursor: pointer;
+
+}
+
+.grand-logo_social{    bottom: 3vh;
+
+    width: 60%;
+    margin-left: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.logo{
+    height: 90%;
+
+    margin-bottom: 15px;
+    width: 100%;
+    background-image: url(../images/Capture_d_écran_du_2024-01-26_14-29-15-removebg-preview.png);
+    background-position: center;
+    background-size: cover;
+}
+.social{
+    height: 20%;
+
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    gap: 10px;
+}
+
+.social button{
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 8px;
+    background-color: #E4EBEE;
+   
+}
+.copyright{
+    
+    border-top: 2px solid white;
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+    
+    color: white;
+    
+}
+
+.btn-social-1{
+   background-image:  url(../images/icones/facebook\ \(1\).svg) ;
+   background-position: center;
+   background-size: 28px;
+   background-repeat: no-repeat;
+
+    
+}
+.images-login article{
+position: relative;
+
+    width: 95%;
+    height: 30%;
+}
+.images-login article img{
+    height: 100%;
+    width: 100%;
+}
+.btn-social-2{
+    background-image:  url(../images/icones/instagram.svg) ;
+    background-position: center;
+    background-size: 28px;
+    background-repeat: no-repeat;
+}
+
+.btn-social-3{
+    background-image:  url(../images/icones/twitter.svg) ;
+    background-position: center;
+    background-size: 28px;
+    background-repeat: no-repeat;
+}
+
+.btn-social-4{
+    background-image:  url(../images/icones/youtube.svg) ;
+    background-position: center;
+    background-size: 28px;
+    background-repeat: no-repeat;
+}
+.contact{
+    padding-bottom: 30px;
+}

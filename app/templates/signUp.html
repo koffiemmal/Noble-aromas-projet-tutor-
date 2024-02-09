@@ -1,0 +1,195 @@
+{% extends 'headear_footer.html' %}
+{% block main %}
+
+<style>
+
+.main-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15vh;
+    height: 90vh;
+}
+.contenaire{
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.688);
+  border-radius: 25px;
+  height: 80%;
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.images-login{
+
+  height: 500px ;
+  width: 45%;
+  height: 100%;
+  background-image: url(../static/images/tmoneu-flooz/rendu-3d-parfum-fleurs.jpg);
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.formulaire{
+  display: flex;
+  align-items: center;
+  justify-self: center;
+
+  width: 55%;
+  height: 100%;
+}
+.formulaire-login{
+
+border-top-right-radius: 25px;
+border-bottom-right-radius:25px;
+background-color:#334155;;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+.formulaire-login h1{
+  font-size: 50px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  bottom: 8vh;
+  right:1vh ;
+  color: white;
+
+
+}
+.formulaire-login input{
+  position: relative;
+  width: 45vh;
+border-radius: 10px;
+  height:40px ;
+ border: none;
+
+}
+
+
+.ecriture{
+  position: relative;
+  bottom: 2vh;
+  font-size: 18px;
+  color: white;
+  right: 10vh;
+}
+.nom{
+  position: relative;
+  bottom: 20px;
+}
+.prenom{
+  position: relative;
+  bottom: 10px;
+}
+.password{
+  position: relative;
+  top: 10px;
+}
+.redirection{
+  position: relative;
+  top: 40px;
+  color: white;
+}
+a{
+  color: rgb(13, 209, 13);
+  font-size: 20px;
+  
+}
+
+.formulaire-login input:focus{
+  box-shadow:0px 0px 10px green;
+  border:none;
+  outline: none;
+}
+.btn-submit input{
+  position: relative;
+  top: 5vh;
+  width: 25vh;
+  font-size: 19px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+  background-color: rgba(0, 128, 0, 0.895);
+}
+</style>
+
+<main class="main-login">
+  
+  <div class="contenaire">
+    
+    <div class="images-login">
+     <!--  <article>
+       <img src="../static/images/tmoneu-flooz/Capture_d_écran_du_2024-02-07_15-40-09-removebg-preview.png" alt="">
+      </article> -->
+      
+   </div>
+   <div class="formulaire"> 
+    <form action="" method="post" class="formulaire-login">
+        {{form.hidden_tag()}}
+        <h1>
+            Creez un compte
+        </h1>
+        <p class="ecriture">
+          Veuillez remplir ce formulaire
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="nom">
+                     
+                        {{form.nom}}
+                     <br>
+                        
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="prenom">
+                     
+                        {{form.prenom}}
+                       <br>
+                        
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="email">
+                        
+                        {{form.email}}
+                       <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="password">
+                       
+                        {{form.password}}
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="btn-submit">
+                        {{form.submit}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      <p class="redirection">Vous avez un compte ?  <a href="signIn">SignIn</a> </p> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+  </div>
+</div>
+        
+    
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block main %}
+<form action="" method="post">
+    <h1>Catgeories</h1>
+
+    {{form.hidden_tag()}}
+<table>
+    <tbody>
+        <tr>
+            <td>
+               
+                    {{form.categorie_name.label}} <br>
+                    {{form.categorie_name}}
+                
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                    {{form.categorie_description.label}}
+                    <br>
+                    {{form.categorie_description}}
+            
+                
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>{{form.submit}}</p>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+  
+
+  
+    
+    
+
+</form>
+{% endblock %}

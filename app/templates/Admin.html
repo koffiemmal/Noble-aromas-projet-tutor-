@@ -1,0 +1,461 @@
+{% extends 'headear_footer.html' %}
+{% block main %}
+<style>
+    table{
+        border-collapse: collapse;
+        border-bottom-left-radius: 20px;
+    }
+    
+    th{
+        height: 5vh;
+        border:none;
+        text-align: center;
+        width: 20%;
+        height: 10vh;
+      
+    }
+.main-admin{
+    padding-top: 19vh;
+    background-color: #85939f;
+    height: 270vh auto ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenaire{
+    width: 95%;
+    border-radius: 20px;
+    background-color: #ffffff;
+    backdrop-filter: blur(50px);
+    margin-bottom: 20px;
+}
+.entete{
+ 
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    
+
+}
+.entete article{
+    background-color: #404e5a;
+    color: white;
+    border:none;
+    border-radius: 15px;
+    height: 90%;
+    width: 325px;
+    position: relative;
+    right: 25px;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.categories{
+  
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.list_cat {
+ 
+    width: 50%;
+  height: auto;
+  border-collapse: collapse;
+
+}
+.list_cat th{
+    border-bottom: 1px solid white;
+    width: 30vh;
+}
+.list_cat .debut_page {
+    background-color: #404e5a;
+    color: white;
+}
+.degrade{
+    background-color: #91b3d1;
+    height: 30px;
+}
+.form_cat{
+    background-color: #5c7183;
+    border-radius: 20px;
+    width: 29.5%;
+    height: 25vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+  
+
+}
+.form_cat input{
+   
+    position: relative;
+  width: 45vh;
+border-radius: 10px;
+  height:35px ;
+ border: none;
+
+
+}
+.form_cat textarea{
+    position: relative;
+  width: 45vh;
+border-radius: 10px;
+  height:100px ;
+ border: none;
+}
+.list_user{
+   
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.user_list{
+
+    border-radius: 15px;
+    height: 85vh  ;
+    width: 90%;
+}
+.user_list th{
+    height: 15vh;
+    border-bottom: 1px solid white;
+
+}
+.user_list table{
+    position: relative;
+    top: 10px;
+    width: 100%;
+}
+.user_list .user th{
+    background-color: white;
+
+}
+.list_produits{
+
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-bottom: 10px;
+   
+}
+.list_produit{
+
+height: auto;
+width: 70%;
+}
+.list_produit table{
+    width: 100%; 
+}
+.form_produit{
+    display:flex ;
+    flex-direction: column;
+
+    align-items: center;
+background-color: #404e5a;
+height: 50vh;
+width: 30%;
+position: relative;
+bottom: 136vh;
+border-radius: 10px;
+}
+.form_produits{
+    position: relative;
+    top: 10px;
+}
+.form_produit input{
+    position: relative;
+  width: 45vh;
+border-radius: 10px;
+  height:35px ;
+ border: none;
+
+}
+.form_produit select{
+    width: 30vh;
+    height: 30px;
+}
+.form_produit textarea{
+    height: 20vh;
+    width: 45vh;
+}
+.tablecat{
+    width: 100%;
+}
+.debut_page{
+    border-right-color: #404e5a;
+    color: white;
+}
+.debut_page_page{
+    background-color: #404e5a;
+    color: white;
+   
+        height: 5vh;
+        border:none;
+        text-align: center;
+        width: 20%;
+        height: 10vh;
+      
+    
+}
+.debut_page{
+    background-color: #404e5a;
+    color: white;
+    width: 100%;
+}
+th img{
+    height: 150px ;
+}
+.parfumerie{
+    border-bottom: 1px solid black;
+}
+.id{
+    width: 50px;
+}
+.tablecat{
+    width: auto;
+}
+.form_produits td{
+    height: 45px;
+   
+}
+input:focus{
+    box-shadow:0px 0px 10px green;
+    border:none;
+    outline: none;
+}
+textarea:focus{
+    box-shadow:0px 0px 10px green;
+    border:none;
+    outline: none;
+}
+.btn-submit input{
+    background-color: #e2e8f0;
+  width: 25vh;
+  position: relative;
+  height: 40px;
+  background-color: rgb(0, 128, 0);
+
+  font-size: 19px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+
+}
+button{
+    
+}
+</style>
+
+<main class="main-admin">
+
+    <div class="contenaire">
+        <div class="entete"><article>bonjour Admin</article></div>
+        <div class="categories"> <section class="list_cat"><table class="tablecat">
+            <tbody>
+                <tr class="debut_page">
+                    <td>
+                        <th class="id">id</th>
+                        <th>nom</th>
+                        <th>description</th>
+                       
+                    </td>
+                </tr>
+               <!--  <tr>
+                    <td>
+                        <th>1</th>
+                        <th>parfums homme</th>
+                        <th>parfums pour les hommes</th>
+                      
+                    </td>
+                </tr> -->
+                {% for cat in categorie %}
+
+                <tr>
+                    <td>
+                        <th class="degrade"> {{cat.id}}</th>
+                        <th>{{cat.nom}}</th>
+                        <th class="degrade">{{cat.description}}</th>
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table></section>
+        <section class="form_cat">
+            <form action=""  method="post">
+                <table>
+                {{form.hidden_tag()}}
+                <tr>
+                    <td>
+                       
+                        {{form.nom}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      
+                        {{form.description}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="btn-submit">
+                        {{form.submit}}
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </section> </div>
+        <div class="list_user"><section class="user_list"><table>
+            <tbody>
+                <tr class="debut_page_page">
+                    <td>
+                        <th>id</th>
+                        <th><span>Nom</span></th>
+                        <th><span>Prenom</span></th>
+                        <th><span>Email</span></th>
+                        <th><span>Ation</span></th>
+                    </td>
+                </tr>
+           
+                {% for user in User %}
+
+                <tr>
+                    <td class="user">
+                        <th class="degrade">{{user.id}}</th>
+                        <th> {{user.nom}} </th>
+                        <th class="degrade"> {{user.prenom}}</th>
+                        <th>{{user.email}} </th>
+                        <th class="degrade"><form method="POST" action="{{ url_for('deleteUser', id=user.id) }}">
+                            <button type="submit">Supprimer</button>
+                        </form></th>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table></section> </div>
+        <div class="list_produits"><section class="list_produit">
+            <table>
+<tbody>
+
+    <tr class="debut_page">
+        <td >
+            <th>
+                id
+            </th>
+            <th>
+                nom
+            </th>
+          <!--   <th>
+                description
+            </th> -->
+            <th>
+                prix
+            </th>
+            <th>
+                apercu
+            </th>
+            <th>
+                action
+            </th>
+            <!-- <th>
+                categorie
+            </th> -->
+
+        </td>
+    </tr>
+
+    {% for parfum in parfums %}
+
+    <tr class="parfumerie">
+        <td>
+            <th class="degrade" >{{parfum.id}}</th>
+            <th> {{parfum.nom}} </th>
+           <!--  <th>   {{parfum.description}}</th> -->
+            <th class="degrade" >{{parfum.prix}}</th>
+            <th><img src="{{parfum.image}}" alt="Parfum"></th>
+            <th class="degrade" >
+                <form method="POST" action="{{ url_for('deleteparfum', id=parfum.id) }}">
+                    <button type="submit">Supprimer</button>
+                </form></th>
+        </td>
+    </tr>
+
+    {% endfor %}
+
+</tbody>
+
+            </table>
+        </section>
+        <section class="form_produit"> 
+            <form method="POST" method="post">
+                {{ forms.csrf_token }}
+                <table class="form_produits" >
+                    <tbody>
+                        <tr>
+                            <td >
+
+                             
+                                {{ forms.nom(size=20) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                
+                                
+                                    
+                                      {{ forms.description(cols=30, rows=10) }}
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                              
+                                {{ forms.prix(size=20) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                                
+                                        
+                                         {{ forms.image(size=20) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                              
+                                {{ forms.categorie_id() }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="btn-submit">
+
+                                {{ forms.submit() }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+          
+           
+           
+              
+            </form>
+        </section></div>
+    </div>
+
+
+</main> 
+
+{% endblock %}

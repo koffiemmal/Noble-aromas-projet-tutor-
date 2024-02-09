@@ -1,0 +1,27 @@
+<form method="POST" action="{{ url_for('addparfum') }}">
+    {{ form.csrf_token }}
+    <div>
+        {{ form.nom.label }}<br>
+        {{ form.nom(size=20) }}
+    </div>
+    <div>
+        {{ form.description.label }}<br>
+        {{ form.description(cols=30, rows=10) }}
+    </div>
+    <div>
+        {{ form.prix.label }}<br>
+        {{ form.prix(size=20) }}
+    </div>
+    <div>
+        {{ form.image.label }}<br>
+        {{ form.image(size=20) }}
+    </div>
+    <div>
+        {{ form.categorie_id.label }}<br>
+        {{ form.categorie_id() }}
+        
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>

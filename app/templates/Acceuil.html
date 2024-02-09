@@ -1,0 +1,134 @@
+{% extends 'headear_footer.html' %}
+{% block main %}
+
+<style>
+    * {
+   
+   transition: all.2s linear;
+   
+}
+    .titles{
+        position: relative;
+        bottom: 90vh;
+        right: 80vh;
+        margin-top: 15vh;
+       margin-left: 85vh;
+        font-size: 3.7em;
+        font-family: 'Bebas Neue', sans-serif;
+font-family: 'Lobster', sans-serif;
+font-family: 'Lobster Two', sans-serif;
+font-family: 'Nanum Pen Script', cursive;
+font-family: 'Oswald', sans-serif;
+color: #6D6875;
+
+width: 60%;
+    }
+    i{
+        font-size: 140px;
+        color  : white;
+    }
+
+</style>
+<main class="main">
+
+  
+   <section><video loop autoplay muted width="100%"  >
+    <source src="../static/images/icones/pexels-mart-production-8447659 (2160p).mp4">
+   </video></section>
+   <section class="titles"><h1> <i>
+    Noble~Aromas</i> <br>Sentez bon !</h1></section>
+</main>
+
+<div class="reste-main">
+    <div class="debut">
+        <section class="debut-page1">
+            <section class="titre">
+                <h2>L'éclat d'une fragrance, l'empreinte de votre charme. </h2> <br>
+                <p><a href="{{url_for('about')}}">Explore now</a></p>
+            </section>
+            <section class="photo1"></section>
+         
+        </section>
+    
+     
+        <section class="debut-page2">
+            <section class="titre">
+                <h2>Une danse délicate de notes qui célèbre votre élégance personnelle .</h2> <br>
+                <p><a href="{{url_for('about')}}">Explore now</a></p>
+            </section>
+            <section class="photo2"></section>
+
+        </section>
+
+       
+    </div>
+    <div class="A-propos">
+       <section class="propos1">
+        <article class="Icones"></article>
+        <article class="Description"><h3>Perfums haute qualité</h3>  <p>
+            
+"Découvrez l'exclusivité de nos spécialités parfums de Luce. Des créations uniques qui éclairent l'essence de votre personnalité, capturant la lumière dans chaque fragrance pour une expérience olfactive exceptionnelle."
+        </p></article>
+       </section>
+       <section class="propos2">
+        <article class="Icones2"></article>
+        <article class="Description"><h3>Odeur Captivante</h3>  <p>
+           
+"Plongez dans l'irrésistible avec nos spécialités olfactives, des parfums qui révèlent une symphonie enchanteresse de senteurs délicieusement exquises. L'essence de la perfection olfactive, conçue pour émerveiller vos sens et laisser une trace inoubliable."
+        </p></article>
+       </section>
+       <section class="propos3"><article class="Icones3"></article>
+        <article class="Description"><h3>A base d'huile essentiel</h3>  <p>
+        
+"Explorez l'art de la parfumerie avec nos spécialités, des fragrances uniques créées à partir d'huiles essentielles raffinées. Laissez-vous emporter par l'harmonie naturelle de ces parfums, une expérience sensorielle authentique et bienfaisante."
+        </p></article></section>
+
+    </div>
+   <div class="Visuelle">
+
+    <section class="visuel1"></section>
+    <section class="visuel2"></section>
+    <section class="visuel3"></section>
+
+   </div>
+   <section class="Titre-parfums-populaires">
+    <h3>Nos parfums populaires </h3>
+   </section>
+   <div class="popular-parfums">
+    {% for parfum in parfums %}
+    <section class="parfums-1">
+        <article class="parfums1"><a href="{{ url_for('parfum', parfum_id=parfum.id) }}"> <img src="{{parfum.image}}" alt="Parfum"></a></article>
+        <article class="Price">
+            <h2>{{parfum.nom}}</h2>
+            <h4>{{parfum.prix}} fcfa</h4>
+        </article>
+    </section>
+    {% endfor %}
+    
+   </div>
+
+   <div class="Tendance">
+    <h3>Meilleures Selection de la semaine</h3>
+    <div class="Container">
+    {% for parfus in par %}
+    
+    <section class="the-best"><a href="{{ url_for('parfum', parfum_id=parfus.id) }}"><img src="{{parfus.image}}" alt="Parfum"></a></section>
+    {% endfor %}
+<section class="the-best-similar">
+    {% for parfum in parf %}
+<article class="art-1"><a href="{{ url_for('parfum', parfum_id=parfum.id) }}"><img src="{{parfum.image}}" alt="Parfum"></a></article>
+{% endfor %}
+
+
+</section>
+    </div>
+
+   </div>
+
+
+   
+
+
+</div>
+
+{% endblock%}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block main %}
+<form action="" method="post">
+    <h1>Ajout Article</h1>
+
+    {{form.hidden_tag()}}
+<table>
+    <tbody>
+        <tr>
+            <td>
+               
+                    {{form.nom_article.label}} <br>
+                    {{form.nom_article}}
+                
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                    {{form.description_article.label}}
+                    <br>
+                    {{form.description_article}}
+        
+                
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{form.Date.label}} <br>
+
+                {{form.Date}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>{{form.submit}}</p>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+  
+
+  
+    
+    
+
+</form>
+{% endblock %}

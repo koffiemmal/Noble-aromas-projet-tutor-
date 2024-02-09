@@ -1,0 +1,346 @@
+{% extends 'headear_footer.html' %}
+{% block main %}
+
+<style>
+
+    .main-about{
+        padding-top: 15vh;
+        height: 315vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8fafc;
+    }
+    .first-about{
+
+        height: 55vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        
+    }
+    @font-face {
+    font-family: 'glamourbold'; /* Nommez la police comme vous voulez */
+    src: url('../fonts/Glamor-BoldCondensedItalic.otf'); /* Remplacez par le chemin vers votre fichier de police */
+  }
+  @font-face {
+    font-family: 'glamourbigbog';
+    src: url(../static/fonts/Glamor-LightItalic.otf);
+  }
+    .first-about h3{
+      
+        width: 85%;
+        font-size: 25px;
+        font-family:'glamourbigbog';
+     
+    }
+    .first-images{
+        border-radius: 20px;
+        height: 90%;
+        width: 40%;
+        box-shadow: 0px 0px 20px rgba(128, 128, 128, 0.467);
+    }
+    .first-images img{
+        border-radius: 20px;
+        height: 100%;
+        width: 100%;
+    }
+    .first-ecris{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        height: 80%;
+        border:1px solid rgba(189, 189, 189, 0.942);
+        width: 50%;
+        border-radius: 25px;
+        font-size: 18px;
+        font-weight: 50;
+        text-align: center;
+        box-shadow: inset 0px 2px 25px rgba(128, 128, 128, 0.355);
+    }
+    .second-about{
+        height: 90vh;
+       
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+
+    }
+    .second-images{
+        height: 95%;
+ 
+        width: 40%;
+    }
+    .second-ecris{
+        height: 100%;
+
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .second-ecris-element{
+
+        height: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      
+        width: 100%;
+    }
+    .second-ecris-element p{
+        font-size: 18px;
+      
+     font-weight: 900; 
+    font-family:'glamourbigbog';
+       width: 95%;
+    }
+    .gif{
+        box-shadow: 0px 3px 25px rgba(174, 174, 174, 0.59) ;
+        border-radius: 35px;
+height: 100%;
+
+width: 19.5%;
+display: flex;
+align-items: center;
+justify-content: center;
+    }
+    .gif img{
+        height: 60%;
+        width: 60%;
+       
+    }
+ 
+    .gif-element{
+        box-shadow: inset 0px 0px 10px rgba(167, 167, 167, 0.309);
+        display: flex;
+        border-radius: 25px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+ 
+        width: 70%;
+        font-size: 18px;
+        font-weight: 100;
+    }
+   
+    .three-about{
+        height: 50vh;
+       
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+.sect-about{
+ 
+    height: 95%;
+    text-align: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0px 0px 5px rgba(78, 78, 78, 0.435);
+    border-radius: 10px;
+    gap: 25px;
+}
+
+.sect-icones{
+
+height:35%;
+width: 10%;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0px 1px 10px rgba(167, 167, 167, 0.361);
+border-radius: 20px;
+}
+.sect-icones img{
+
+    height: 70%;
+    width: 80%;
+
+}
+.sect-title{
+position: relative;
+bottom: 15px;
+height:10%;
+width: 35%;
+}
+.gif-element p{
+    width: 80%;
+}
+.sect-description{
+
+
+height: 38%;
+
+width: 60%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.sect-description p{
+    width: 80%;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family:'glamourbigbog';
+  
+}
+.four-about{
+    height: 45vh;
+
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.collab{
+    box-shadow: 0px 5px 20px rgba(128, 128, 128, 0.366);
+    height: 89%;
+    width: 30vh;
+}
+.collab img{
+    height: 100%;
+    width: 100%;
+}
+.four-titre{
+    box-shadow: 0px 1px 10px rgba(128, 128, 128, 0.333);
+    height: 7vh;
+   
+   text-align: center;
+   width: 25%;
+}
+.sect-collab{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    height: 60%;
+  
+    width: 90%;
+  /*   gap: 10px; */
+}
+.entete{
+
+    height: 20vh;
+    border-radius: 30px;
+    width: 98%;
+    box-shadow: 0px 5px 20px rgba(194, 194, 194, 0.496);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
+}
+.second-images img{
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+}
+.second-images{
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.253);
+    border-radius: 25px;
+}
+i{
+    color: #404e5a;
+    font-size: 40px;
+}
+</style>
+
+<main class="main-about">
+    <div class="entete">
+
+        <h1>    A propos de <i>Noble~Aromas</i> </h1>
+
+    </div>
+
+    <div class="first-about">
+
+        <section class="first-images"><img src="../static/images-about/flacon-produit-beaute-parfume-arome-luxueux-pour-relaxation-genere-par-intelligence-artificielle.jpg" alt=""></section>
+        <section class="first-ecris"><h3>Bienvenue chez Noble Aromas, l'essence même de l'élégance olfactive. Chez Noble Aromas, nous sommes passionnés par l'art subtil de la parfumerie. Chaque fragrance que nous créons est le résultat d'une quête incessante de l'excellence, combinant habilement l'innovation contemporaine et la richesse des traditions olfactives.</h3></section>
+
+
+    </div>
+    <div class="first-about">
+
+        <section class="first-ecris"><h3>
+            Bien sûr, voici une suggestion pour la section "À propos" de votre entreprise de parfums, "Noble Aromas" :
+            
+            Bienvenue chez Noble Aromas, l'essence même de l'élégance olfactive. Chez Noble Aromas, nous sommes passionnés par l'art subtil de la parfumerie. Chaque fragrance que nous créons est le résultat d'une quête incessante de l'excellence, combinant habilement l'innovation contemporaine et la richesse des traditions olfactives.
+            
+          </h3></section>
+        <section class="first-images"><img src="../static/images-about/vue-face-bouteille-eau-cologne-branche-arbre-pourrie-fond-bleu-clair-flou.jpg" alt=""></section>
+
+
+    </div>
+    <div class="second-about">
+        <section class="second-images"><img src="../static/images-about/flacon-verre-fonce-seule-ia-generatrice-goutte-liquide.jpg" alt=""></section>
+        <div class="second-ecris">  
+
+            <section class="second-ecris-element">
+                <article class="gif"><img src="../static/images-about/wired-lineal-27-globe.gif" alt=""></article>
+                <article class="gif-element"><p>Bienvenue chez Noble Aromas, l'épicentre mondial de l'élégance olfactive. Nous sommes fiers de vous présenter une collection exquise de parfums qui transcendent les frontières et captivent les sens à travers le monde.
+
+                    .</p></article>
+            </section>
+            <section class="second-ecris-element">
+                <article class="gif"><img src="../static/images-about/wired-lineal-646-walking-walkcycle-person.gif" alt=""></article>
+                <article class="gif-element"><p>Rejoignez-nous dans cette aventure olfactive internationale, où la magie des parfums traverse les frontières et crée des moments inoubliables. Chez Noble Aromas, la livraison mondiale n'est pas seulement un service, c'est un moyen de partager notre passion avec le monde entier.</p></article>
+            </section>  <section class="second-ecris-element">
+                <article class="gif"><img src="../static/images-about/wired-lineal-533-hand-washing-step-4.gif" alt=""></article>
+                <article class="gif-element"><p>Chez Noble Aromas, nous comprenons l'importance d'une fragrance qui résiste au passage du temps. Nos parfums sont conçus avec une formule unique qui s'entrelace harmonieusement avec votre peau, créant une fusion intime qui persiste, même après avoir succombé aux bienfaits d'une douche rafraîchissante.</p></article>
+            </section>  <section class="second-ecris-element">
+                <article class="gif"><img src="../static/images-about/wired-lineal-298-coins.gif" alt=""></article>
+                <article class="gif-element"> <p>Chez Noble Aromas, nous croyons que le luxe ne devrait pas être synonyme de coût élevé. Nos parfums d'exception sont soigneusemen </p></article>
+            </section>
+        </div>
+    </div>
+    <div class="three-about">
+        <section class="sect-about">
+            <artcile class="sect-icones"><img src="../static/images-about/perfume_8561755.png" alt=""></artcile>
+            <artcile class="sect-title"><h2>"Senteurs Exquises : Explorez notre Univers Olfactif"</h2></artcile>
+            <artcile class="sect-description"> <p>
+                
+"Découvrez l'essence même de la sophistication dans notre section 'Senteurs Exquises'. Plongez dans un monde de parfums captivants, où chaque fragrance raconte une histoire unique. De la fraîcheur délicate aux accords envoûtants, notre collection offre une expérience olfactive incomparable. Laissez-vous séduire par des notes soigneusement sélectionnées et explorez un univers où l'élégance devient tangible à travers chaque vaporisation
+            </p> </artcile>
+        </section>
+    </div>
+    <div class="four-about">
+        <article class="four-titre">
+            <h2>Collaboratteur</h2>
+        </article>
+
+<section class="sect-collab">
+    <article class="collab">
+<img src="../static/images-collab/Beige Aesthetic Illustration Perfume Shop Logo.png" alt="">
+    </article>
+    <article class="collab">
+<img src="../static/images-collab/Cyan Perfume Brand Logo.png" alt="">
+    </article> 
+     <article class="collab">
+<img src="../static/images-collab/Logo de Parfum de Luxe Raffiné Élégant en Noir et Rose pastel.png" alt="">
+    </article> 
+     <article class="collab">
+<img src="../static/images-collab/Organic Perfume  Magic Logo.png" alt="">
+    </article>  
+    <article class="collab">
+<img src="../static/images-collab/White And Black Modern Abstract Beauty Logo.png" alt="">
+    </article>
+</section>
+    </div>
+
+</main>
+
+{% endblock %}

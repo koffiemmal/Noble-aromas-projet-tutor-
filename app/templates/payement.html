@@ -1,0 +1,327 @@
+{% extends 'headear_footer.html' %}
+{% block main %}
+
+<style>
+
+* {
+   
+    transition: all.2s linear;
+}
+
+.contenaire {
+   
+    padding: 18vh;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenaire .donnees {
+    width: 50%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px rgb(161, 161, 161);
+}
+
+.contenaire form {
+    imgmargin-top: 25px;
+}
+
+.contenaire .title {
+   /*  border: 1px solid rgba(128, 128, 128, 0.329);
+    width: 100%;
+    display: flex;
+    align-items: center; */
+border-bottom: 1px solid rgb(60, 60, 60);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.methode-payement{
+  
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 70%;
+}
+.methode-payement article{
+   
+    border: 1px solid rgba(117, 117, 117, 0.724);
+    height: 100%;
+    width: 12vh;
+    
+}
+.methode-payement article img{
+    height: 100%;
+    width: 100%;
+}
+
+.contenaire h1 {
+    margin-left: 35px;
+}
+
+.contenaire form input[type='number'] {
+    width: 500px;
+    height: 40px;
+}
+
+.contenaire form input[type='password'] {
+    height: 40px;
+}
+
+.contenaire .panier {
+    border: 1px solid lightgray;
+    width: 38%;
+    height: 750px auto;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.329);
+}
+
+.contenaire .produit {
+    border: 1px solid lightgray;
+    height: 120px;
+    width: 85%;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenaire .minim {
+    border: solid;
+    width: 27%;
+    height: 100px;
+    background-color: lightgray;
+    border: lightgray;
+}
+
+.contenaire .max {
+    border: solid;
+    width: 68%;
+    height: 100px;
+    background-color: lightgray;
+    border: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenaire .max li {
+    list-style-type: none;
+}
+
+.contenaire .facture {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenaire .facture span {
+    align-items: center;
+    font-weight: bold;
+}
+
+.contenaire .button {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenaire .button input {
+    width: 420px;
+    height: 50px;
+    background-color:#404e5a;
+    color: white;
+    border: none;
+}
+
+.contenaire .button input:hover {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.662);
+}
+input:focus{
+    box-shadow:0px 0px 8px rgb(77, 128, 223);
+    border:none;
+    outline: none;
+}
+input:active{
+    border: none;
+}
+.choix-methode{
+    position: relative;
+    top: 15px;
+    width: 8vh;
+}
+.choix-methode2{
+    position: relative;
+    top: 5px;
+    width: 8vh;
+    height: 30px;
+}
+input{
+   border: 1px solid rgba(128, 128, 128, 0.499);
+   border-radius: 5px;
+}
+.minim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.minim img{
+    height: 95px;
+    width: 90px;
+}
+.validation{
+    width: 70%;
+    height: 40px;
+    background-color: #404e5a;
+    color: white;
+    font-size: 100;
+}
+.facture span {
+    position: relative;
+    left: 35vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+</style>
+
+<main class="contenaire">
+  
+    <div class="donnees">
+        <div class="title">
+            <h1>Paiement</h1>
+            <section class="methode-payement">
+            <article><img src="../static/images/tmoneu-flooz/Logo_TMoney_Togocom_New1.png" alt=""></article>
+            <article><img src="../static/images/tmoneu-flooz/Moov-Money.webp" alt=""></article>
+            <article><img src="../static/images/tmoneu-flooz/Wari.webp" alt=""></article>
+        </section>
+        </div>
+        <hr>
+        <form action="/process_payment" method="post">
+
+            <label for="choix">Choix :</label><br>
+            <input type="radio" name="choix" value="TMONEY" required><img class="choix-methode" src="../static/images/tmoneu-flooz/Logo-TMONEY_Fond-Jaune-Togocom-11.png" alt="">
+            <input type="radio" name="choix" value="FLOOZ" required><img  class="choix-methode2"  src="../static/images/tmoneu-flooz/Moov-Money.webp" alt=""><br><br>
+
+            
+            <input type="number" id="numero_telephone" name="numero_telephone" placeholder="Numero de telephone " required><br><br>
+
+            
+            <input type="password" id="code_secret" name="code_secret" placeholder="code secret" required><br><br>
+
+        </form>
+    </div>
+    <div class="panier">
+        <h1>Select panier:</h1>
+        <p style="margin-left: 40px;">{{nombre}} produits:</p>
+        {% for parfum in parfums %}
+        <div class="produit">
+            <div class="minim">
+                <img src="{{parfum.image}}" alt="Parfum">
+            </div>
+            <div class="max">
+                <ul>
+                    <li><strong>$ {{parfum.prixtotal}}</strong></li>
+                    <li>{{parfum.nom}}</li><br>
+                    <li><strong>Qte:{{parfum.quantite}}</strong></li>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+      
+        <hr>
+        <div class="facture">
+            <p>Prix unitaire:      <span>{{prixu}} fcfa</span></p>
+            <p>Frais de livraison: <span>300 fcfa</span></p>
+            <p>Total avec tax:     <span>{{prixtotal}} fcfa</span></p>
+        </div><br><br><br>
+        <div class="button">
+            <form action=""></form>
+            <button  class="validation" type="submit">Valider</button>
+        </form>
+        </div>
+    </div>
+</main>
+<script>
+
+let divcache = document.createElement('div')
+
+divcache.style.position = "fixed";
+divcache.style.top = "0";
+divcache.style.left = "0";
+divcache.style.width = "100vw";
+divcache.style.height = "100vh";
+divcache.style.backgroundColor = "rgba(128, 128, 128, 0.5)"; 
+divcache.style.display="flex"
+divcache.style.alignItems="center"
+divcache.style.justifyContent="center"
+divcache.style.textAlign="center"
+divcache.style.zIndex = "10000"; // Ajoutez cette ligne
+
+let popoup = document.createElement("div")
+divcache.appendChild(popoup)
+
+popoup.style.height="25vh"
+popoup.style.width="70vh"
+popoup.style.backgroundColor="white"
+popoup.style.boxShadow="0px 0px 10px gray "
+popoup.style.borderRadius="15px"
+popoup.style.position="fixed"
+popoup.style.zIndex="1000"
+popoup.style.display="flex"
+popoup.style.flexDirection="column"
+popoup.style.justifyContent="space-around"
+popoup.style.alignItems="center"
+
+let entete = document.createElement('h2')
+
+entete.textContent = "Votre commande a été comfirmé et vous \n sera livré dans les plus bref delai"
+entete.style.fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+let btn_merci = document.createElement('button')
+
+btn_merci.textContent ="Merci "
+btn_merci.style.width="17vh"
+btn_merci.style.backgroundColor="#404e5a"
+btn_merci.style.fontSize="18px"
+btn_merci.style.height="40px"
+btn_merci.style.color="white"
+
+
+
+popoup.appendChild(entete)
+popoup.appendChild(btn_merci)
+
+
+let main_div= document.querySelector('.contenaire')
+
+let validBTn = document.querySelector('.validation')
+
+validBTn.addEventListener('click',(e)=>{
+    
+    main_div.appendChild(divcache)
+    
+})
+
+btn_merci.addEventListener('click',(e)=>{
+
+    main_div.removeChild(divcache)
+
+})
+
+
+
+
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	font-size: 16px;
+	font-family: "Montserrat", sans-serif;
+	color: rgba(0, 0, 0, .87);
+	line-height: 1.8;
+	margin: 0;
+
+}
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: white;
+	padding: 20px;
+	z-index: 3;
+	opacity: .95;
+
+}
+
+.nav {
+	float: left;
+}
+
+.nav a {
+	color: gray;
+	text-decoration: none;
+	padding: 0 50px;
+}
+
+.nav a:hover, .nav a.active{
+	color: black;
+}
+
+.header .social {
+	float: right;
+
+}
+
+.social a{
+	padding: 0 10px;
+	opacity: .5;
+}
+
+.social a:hover{
+	opacity: 1;
+}
+
+.banniere {
+	height: 400px;
+	background-image: url(../images/resto.jpg);
+}
+
+.main{
+	float: left;
+	width: calc(100% - 300px);
+	/*height: auto;*/
+	z-index: 2;
+	position: relative;
+}
+.article {
+	overflow: hidden;
+	box-shadow: 0 1px 80px lightgray;
+	margin: 15px 180px;
+}
+
+.article-date {
+	font-weight: 300;
+	color: rgba(0, 0, 0, .6);
+	margin-bottom: 5px;
+}
+
+.article .article-img {
+	float: left;
+	width: 200px;
+	height: 100%;
+	margin-right: 15px;
+}
+
+.article-title {
+	line-height:1.1;
+	font-size: 1.75rem;
+	font-family: "Cardo", serif;
+	margin: 0 0 15px 0;
+}
+
+.sidebar-title {
+	font-size: 30px;
+	margin: 0 10px;
+}
+
+.sidebar-title:first-child{
+	margin-top: 10px;
+}
+.sidebar{
+	background: #E8E8E8;
+	float: right;
+	width: 300px;
+	z-index: 1;
+	position: relative;
+}
+
+.sidebar a {
+	text-decoration: none;
+	color: gray;
+}
+
+.sidebar ul{
+	list-style: none;
+}
+
+.sidebar li{
+	padding: 6px 0;
+}
+
+.sidebar a:hover{
+	text-decoration: underline;
+}
+
+hr{
+	border: none;
+	background: #c4c4c4;
+	height: 1px;
+	margin: 20px;
+}
+
+.footer {
+	clear: both;
+}

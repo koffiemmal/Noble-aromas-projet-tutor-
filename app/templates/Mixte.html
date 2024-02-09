@@ -1,0 +1,139 @@
+{% extends 'headear_footer.html' %}
+{% block main %}
+<style>
+
+@font-face {
+  font-family: 'glamourlight'; /* Nommez la police comme vous voulez */
+  src: url('../static/fonts/Glamor-LightItalic.otf'); /* Remplacez par le chemin vers votre fichier de police */
+}
+  
+    .main-mixte{
+      background-color: #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 190vh;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding-top: 19vh;
+  
+   
+ 
+  }
+.images-mixte{
+  height: 20vh;
+    border-radius: 30px;
+    width: 98%;
+    box-shadow: 0px 5px 20px rgba(194, 194, 194, 0.496);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:'glamourlight';
+    font-weight: 100;
+   
+}
+.images-mixte h1{
+  font-size: 50px;
+    text-align: center;
+
+    
+    color: #0f172a;
+  
+}
+.Container-mixte{
+  margin-top: 50px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: auto;
+    width: 70%;
+    gap: 30px;
+
+}
+
+.parfums-mixte{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #cbd5e1;
+    border-radius: 50px;
+    box-shadow: inset 0px 0px 150px rgba(0, 0, 0, 0.496) ;
+}
+
+.parfums-mixte .photo-parfums{
+  height: 500px;
+        width: 400px;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.parfums-mixte img{
+  height: 250px;
+
+}
+.name-price{
+  position: relative;
+bottom: 5vh;
+    text-align: center;
+    color: #0f172a;
+    font: 25px;
+  }
+  .btn-voirplus{
+    position: relative;
+   
+    bottom: 5vh;
+    font-size: 16px;
+    height: 52px;
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 150px;
+    text-decoration: underline;
+    border: none;
+    font-weight: 200;
+    box-shadow: 0px 2px 8px #a29ea7c6;
+    border-radius: 15px;
+
+
+  }
+.btn-voirplus:hover{
+  box-shadow:  0px 2px 5px #0808089e;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+</style>
+
+<main class="main-mixte">
+  <div class="images-mixte">
+   
+  <h1>
+    Categories Femmes & Hommes
+  </h1>
+
+  </div>
+  <br>
+  
+  <div class="Container-mixte">
+    {% for parfum in parfums %}
+    <section class="parfums-mixte">
+<article class="photo-parfums">
+
+  <a href="{{ url_for('parfum', parfum_id=parfum.id) }}">  <img src="{{parfum.image}}" alt="Parfum"></a>
+
+</article>
+<article class="name-price">
+    <h2>{{parfum.nom}}</h2>
+    <h4>{{parfum.prix}} fcfa</h4>
+</article>
+<button class="btn-voirplus"><a href="{{ url_for('parfum', parfum_id=parfum.id) }}">Voir Plus</a></button>
+
+    </section>
+ 
+    {% endfor %}
+  </div>
+</main>
+{% endblock%}

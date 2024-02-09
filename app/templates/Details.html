@@ -1,0 +1,334 @@
+{% extends 'headear_footer.html' %}
+{% block main %}
+<style>
+
+    .main-description{
+       height: 245vh;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       background-color: #f8fafc;
+       padding-top: 20vh;
+    }
+
+    .Details{
+
+height: 100vh;
+
+width: 100%;
+    }
+    .produits-description{
+
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 100px;
+width: 100%;
+
+    }
+
+    .produits-photo{
+  background-color: #ffffff;
+height: 60%;
+width: 25%;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 25px;
+box-shadow: 0px 0px 25px rgba(128, 128, 128, 0.495);
+
+    }
+    .produits-photo img{
+        height: 300px;
+    }
+    .description-produit{
+position: relative;
+top: 9vh;
+width: 40%;
+height: 60%;
+
+
+    }
+    .produits-similaires{
+ 
+        
+        height: 120vh;
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+        margin-left: 5vh;
+        gap:15px ;
+     
+       
+    }
+
+.produits-similaires section{
+
+height: 80%;
+width:90%;
+background-color: rgb(255, 255, 255);
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+
+
+}
+.produits-similaires section:hover{
+
+
+    box-shadow: rgba(50, 50, 93, 0.608) 0px 6px 12px -2px, rgba(0, 0, 0, 0.471) 0px 3px 7px -3px;    
+}
+.produits-similaires section img{
+    height: 250px;
+   /*  display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px; */
+
+}
+.produits-similaires button{
+    position: relative;
+    top: 1vh;
+    
+    bottom: 14vh;
+    font-size: 16px;
+    height: 52px;
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 150px;
+    text-decoration: underline;
+    border: none;
+    font-weight: 200;
+box-shadow: 0px 0px 8px rgba(162, 158, 167, 0.598);
+    border-radius: 15px;
+
+    
+}
+.produits-similaires button:hover{
+    box-shadow: 0px 0px 5px 5px #ffffff;
+  background-color: #dadada;
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+}
+    .petites-details{
+
+height: 45%;
+display: flex;
+flex-direction: column;
+align-items: start;
+justify-content: space-around;
+    }
+    .bouton{
+
+height: 10%;
+
+display: flex;
+align-items: center;
+justify-content: space-around;
+position: relative;
+top: 15vh;
+right: 30px;
+
+    }
+    .bouton button{
+        border: none;
+        color: rgb(255, 255, 255);
+        padding: 20px;
+        width: 40%;
+        background-color: #404e5a;
+        
+    }
+    .bouton button:hover{
+        background-color: #404e5a;
+        color:white;
+        box-shadow:  0px 5px 10px rgba(0, 0, 0, 0.568);
+    }
+    .description-detailés{
+font-family: 'Times New Roman', Times, serif;
+font-size: 16px;
+
+position: relative;
+
+
+    }
+    .quantite{
+        margin-left: 2px;
+        display: flex;
+        width: 250px;
+        height: 40px;
+
+align-items: center;
+justify-content: center;
+gap:20px;
+text-align: center;
+
+    }
+    .regroup button{
+        width: 40%;
+        height: 40px;
+    }
+    .regroup{
+      
+        border: 1px solid black;
+        width: 200px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+        
+    }
+    .similar{
+        text-align: center;
+        font-size: 45px;
+    }
+    @font-face {
+  font-family: 'glamourlight'; /* Nommez la police comme vous voulez */
+  src: url('../static/fonts/Glamor-LightItalic.otf'); /* Remplacez par le chemin vers votre fichier de police */
+}
+    
+    .images-femme{
+  height: 20vh;
+    border-radius: 30px;
+    width: 98%;
+    box-shadow: 0px 5px 20px rgba(194, 194, 194, 0.496);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:'glamourlight';
+    font-weight: 100;
+    }
+</style>
+
+
+<main class="main-description">
+    <div class="images-femme">
+        <h1>
+          Parfums-/ {{parfum.nom}}
+        </h1>
+      </div>
+<div class="Details">
+    <div class="produits-description">
+
+        <div class="produits-photo">
+            <img src="{{ parfum.image }}" alt="Parfum">
+        </div>
+        <div class="description-produit">
+<section class="petites-details">
+    <h1>Nom : {{parfum.nom}}</h1>
+    <h2>Prix : {{parfum.prix}} fcfa</h2>
+    <section class="description-detailés">
+        <h2>Description : <br> {{parfum.description}} </h2>
+        
+    </section>
+    <h2>Catégorie : {{categorie.nom}}</h2>
+    <h2>disponibilité :stock</h2>
+    <section class="quantite"> <h2>Quantité</h2> : <section class="regroup"><button class="btn-moins"> - </button> <p class="quant">  </p> <button class="btn-plus"> + </button> </section> </section>
+</section>
+
+<section class="bouton"> <button onclick="ajouterAuPanier('{{ parfum.id}}')">AJOUTER AU PANIER</button> <button class="btn-acheter"> ACHETER MAINTENANT </button></section>
+
+        </div>
+
+
+    </div>
+    <h2 class="similar">Produits Similaires</h2>
+    <div class="produits-similaires">
+        {% for produit in produits_similaires %}
+<section><article>
+    <a href="{{ url_for('parfum', parfum_id=produit.id) }}"> <img src="{{produit.image}}" alt="Parfum"></a>
+</article>
+<button><a href="{{ url_for('parfum', parfum_id=produit.id) }}">Voir Plus</a></button></section>
+{% endfor %}
+
+
+    </div>
+</div>
+<script>
+   let  nombre_ele = 1;
+  document.addEventListener('DOMContentLoaded', () => {
+  let BtnMoins = document.querySelector('.btn-moins');
+
+  let quantité = 1;
+
+
+  let quant = document.querySelector('.quant')
+
+   quant.textContent = quantité;
+
+  BtnMoins.addEventListener("click", (e) => {
+    if (quantité <= 1) {
+      alert("La quantité ne peut plus être diminuée");
+    }
+    if (quantité > 1) {
+      quantité -= 1;
+      
+    }
+    quant.textContent = quantité;
+     nombre_ele = quantité
+   
+  });
+
+  let btn_ach = document.querySelector('.btn-acheter')
+
+  btn_ach.addEventListener('click',(e)=>{
+    
+    alert("votre commande a ete lancer avec succes ")
+  })
+
+
+  let BtnPlus = document.querySelector('.btn-plus');
+
+  BtnPlus.addEventListener("click", (e) => {
+    quantité += 1;
+    
+    quant.textContent = quantité;
+    nombre_ele = quantité
+  });
+
+});
+
+function ajouterAuPanier(idParfum,nombre) {
+   
+    nombre = nombre_ele
+    console.log(nombre_ele)
+    // Envoyer une requête HTTP à votre serveur avec l'ID du parfum
+    alert("votre produit a été ajouter")
+    fetch('/ajouter-au-panier', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: idParfum,nombre_elements: nombre}),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        
+        
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
+    location.reload()
+}
+
+    
+    </script>
+
+
+</main>
+
+
+{% endblock %}
+
+
+
+
